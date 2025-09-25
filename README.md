@@ -24,7 +24,7 @@
 
 ```bash
 # Клонирование репозитория
-git clone https://github.com/yourusername/video-transcription-app.git
+git clone https://github.com/vestitsky/video-transcription-app.git
 cd video-transcription-app
 
 # Создание виртуального окружения
