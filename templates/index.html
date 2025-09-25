@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Transcription</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Transcription</h1>
+        <p>Upload a video file and select language for speech transcription</p>
+
+        <div class="upload-section">
+            <input type="file" id="fileInput" accept="video/*" style="display: none;">
+            <button id="uploadBtn">Choose Video File</button>
+            <span id="fileName" class="file-name"></span>
+        </div>
+
+        <div class="language-section">
+            <label for="languageSelect">Select transcription language:</label>
+            <select id="languageSelect" class="language-selector">
+                <option value="auto">🌐 Auto-detect (Russian/English)</option>
+                <option value="ru-RU">🇷🇺 Russian (Русский)</option>
+                <option value="en-US">🇺🇸 English (US)</option>
+                <option value="en-GB">🇬🇧 English (UK)</option>
+                <option value="es-ES">🇪🇸 Spanish (Español)</option>
+                <option value="fr-FR">🇫🇷 French (Français)</option>
+                <option value="de-DE">🇩🇪 German (Deutsch)</option>
+                <option value="it-IT">🇮🇹 Italian (Italiano)</option>
+                <option value="pt-BR">🇧🇷 Portuguese (Português)</option>
+                <option value="ja-JP">🇯🇵 Japanese (日本語)</option>
+                <option value="ko-KR">🇰🇷 Korean (한국어)</option>
+                <option value="zh-CN">🇨🇳 Chinese Simplified (中文)</option>
+                <option value="ar-SA">🇸🇦 Arabic (العربية)</option>
+                <option value="hi-IN">🇮🇳 Hindi (हिन्दी)</option>
+                <option value="tr-TR">🇹🇷 Turkish (Türkçe)</option>
+                <option value="nl-NL">🇳🇱 Dutch (Nederlands)</option>
+            </select>
+            <button id="startBtn" class="start-btn hidden">Start Transcription</button>
+        </div>
+
+        <div id="connectionStatus" class="connection-status"></div>
+        <div id="debugInfo" class="debug-info"></div>
+        <div id="status" class="status hidden"></div>
+
+        <div class="transcription-section">
+            <h2>Transcription Result:</h2>
+            <textarea id="transcriptionText" readonly placeholder="Upload a video to see transcription here..."></textarea>
+        </div>
+
+        <div id="languageInfo" class="language-info hidden"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

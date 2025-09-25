@@ -1,0 +1,6 @@
+Flask
+Flask-SocketIO
+moviepy
+ffmpeg-python
+SpeechRecognition
+pydub
